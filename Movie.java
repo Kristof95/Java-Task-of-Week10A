@@ -9,11 +9,11 @@ public class Movie extends Product implements Buyable
 		ACTION,THRILLER,HORROR,SCI_FI,ROMANTIC,COMEDY,DRAMA
 	}
 	
-	private Genre genre;
-	private long duration;
-	private double rate;
-	private List<Person> cast;
-	private int price;
+	Genre genre;
+	long duration;
+	double rate;
+	List<Person> cast;
+	int price;
 	
 	public Movie(Genre genre, long duration, double rate, List<Person> cast, int price)
 	{
@@ -23,6 +23,7 @@ public class Movie extends Product implements Buyable
 		this.rate = rate;
 		this.cast = cast;
 		this.price = price;
+		this.id = IdGenerator.generate(this);
 	}
 	
 	public Genre getGenre()
@@ -80,7 +81,7 @@ public class Movie extends Product implements Buyable
 	@Override
 	public long getInvestment()
 	{
-		int total = 0;
+		long total = 0;
 		for (Person person : cast)
 		{
 			total += person.getSalary();

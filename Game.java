@@ -3,9 +3,9 @@ import java.util.*;
 
 public class Game extends Product implements Buyable
 {
-	private boolean preOrdered;
-	private List<Person> staff;
-	private int price;
+	boolean preOrdered;
+	List<Person> staff;
+	int price;
 	
 	public Game(boolean preOrdered, List<Person> staff, int price)
 	{
@@ -13,6 +13,7 @@ public class Game extends Product implements Buyable
 		this.preOrdered = preOrdered;
 		this.staff = staff;
 		this.price = price;
+		this.id = IdGenerator.generate(this);
 	}
 
 	public boolean isPreOrdered()
@@ -40,7 +41,7 @@ public class Game extends Product implements Buyable
 	{
 		if (preOrdered == true)
 		{
-			return price * (80/100);
+			return (int)((double)price * 0.8);
 		}
 		return price;
 	}
@@ -53,13 +54,11 @@ public class Game extends Product implements Buyable
 	@Override
 	public long getInvestment()
 	{
-		int total = 0;
+		long total = 0;
 		for (Person person : staff)
 		{
 			total += person.getSalary();
 		}
 		return total;
 	}
-	
-	
 }

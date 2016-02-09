@@ -2,9 +2,9 @@ package movieHandlerUpgrade;
 
 public abstract class Product
 {
-	private String id;
-	private String title;
-	private Person person;
+	String id;
+	String title;
+	Person person;
 	
 	public String getTitle()
 	{

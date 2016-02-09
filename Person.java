@@ -7,10 +7,10 @@ public class Person
 		MALE, FEMALE
 	}
 	
-	private String firstName;
-	private String lastName;
-	private Gender gender;
-	private int salary;
+	String firstName;
+	String lastName;
+	Gender gender;
+	int salary;
 	
 	public Person(String firstName, String lastName, Gender gender, int salary)
 	{

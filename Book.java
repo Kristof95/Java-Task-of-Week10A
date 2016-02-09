@@ -23,6 +23,7 @@ public class Book extends Product
 	public Book(Person author)
 	{
 		this.author = author;
+		this.id = IdGenerator.generate(this);
 	}
 	
 	
